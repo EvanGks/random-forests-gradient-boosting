@@ -1,0 +1,18 @@
+# requirements.txt
+# List of Python dependencies required for the Telco Customer Churn project using Random Forest and Gradient Boosting
+# Install with: pip install -r requirements.txt
+
+# Core scientific libraries
+numpy           # Fundamental package for numerical computations
+pandas          # Data manipulation and analysis
+
+# Visualization libraries
+matplotlib      # Plotting and visualization
+seaborn         # Statistical data visualization (built on matplotlib)
+
+# Machine learning libraries
+scikit-learn    # Machine learning algorithms and tools
+shap            # Model interpretability using SHAP values
+
+# Jupyter environment
+jupyter         # Interactive notebook environment
