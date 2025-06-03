@@ -53,6 +53,10 @@ Random Forests & Gradient Boosting/
 ├── README.md                            # Project documentation (this file)
 ├── requirements.txt                     # Python dependencies
 ├── LICENSE                              # MIT License file
+├── figure/                              # Visual results (confusion matrices and ROC curves for both models)
+│   ├── random_forest_confusion_matrix.png
+│   ├── gradient_boosting_confusion_matrix.png
+│   ├── roc_curve_comparison.png
 ```
 
 ---
@@ -131,22 +135,64 @@ Random Forests & Gradient Boosting/
 
 ## 📊 Results
 
-### Model Metrics (Typical)
-- **Random Forest:**
-  - Accuracy: ~0.80–0.82
-  - Precision, Recall, F1-score: High for majority class, moderate for minority class
-  - ROC-AUC: ~0.85–0.87
-- **Gradient Boosting:**
-  - Accuracy: ~0.81–0.83
-  - Precision, Recall, F1-score: Slightly higher for minority class
-  - ROC-AUC: ~0.86–0.88
+### Model Metrics (Reproducible Run)
 
-> **Note:** Exact results may vary by random split. See the [Kaggle notebook](https://www.kaggle.com/code/evangelosgakias/randomforest-gradientboosting) for live, up-to-date metrics, confusion matrices, ROC curves, and SHAP plots.
+#### Random Forest
+- **Best parameters:** `{ 'max_depth': 5, 'n_estimators': 300 }`
+- **Evaluation Metrics:**
+  - Accuracy: 0.7932
+  - Precision: 0.6722
+  - Recall: 0.4332
+  - F1 Score: 0.5268
+  - ROC-AUC: 0.8370
 
-### Visualizations
-- **Confusion Matrices:** Show correct and incorrect predictions for both models
-- **ROC Curves:** Compare model performance visually
-- **Feature Importance & SHAP:** Highlight the most influential features (e.g., MonthlyCharges, tenure)
+- **Classification Report:**
+```
+              precision    recall  f1-score   support
+
+           0       0.82      0.92      0.87      1033
+           1       0.67      0.43      0.53       374
+
+    accuracy                           0.79      1407
+   macro avg       0.75      0.68      0.70      1407
+weighted avg       0.78      0.79      0.78      1407
+```
+
+#### Gradient Boosting
+- **Best parameters:** `{ 'learning_rate': 0.1, 'max_depth': 3, 'n_estimators': 50 }`
+- **Evaluation Metrics:**
+  - Accuracy: 0.7982
+  - Precision: 0.6510
+  - Recall: 0.5187
+  - F1 Score: 0.5774
+  - ROC-AUC: 0.8417
+
+- **Classification Report:**
+```
+              precision    recall  f1-score   support
+
+           0       0.84      0.90      0.87      1033
+           1       0.65      0.52      0.58       374
+
+    accuracy                           0.80      1407
+   macro avg       0.74      0.71      0.72      1407
+weighted avg       0.79      0.80      0.79      1407
+```
+
+#### Model Comparison Table
+
+| Model              | Accuracy | Precision | Recall   | F1 Score | ROC-AUC |
+|--------------------|----------|-----------|----------|----------|---------|
+| Random Forest      | 0.793177 | 0.672199  | 0.433155 | 0.526829 | 0.836961|
+| Gradient Boosting  | 0.798152 | 0.651007  | 0.518717 | 0.577381 | 0.841749|
+
+#### Visualizations
+- **Confusion Matrices:**
+  - Random Forest: ![Random Forest Confusion Matrix](figure/random_forest_confusion_matrix.png)
+  - Gradient Boosting: ![Gradient Boosting Confusion Matrix](figure/gradient_boosting_confusion_matrix.png)
+- **ROC Curve Comparison:**
+  - ![ROC Curve Comparison](figure/roc_curve_comparison.png)
+- See the live version of the [notebook](https://www.kaggle.com/code/evangelosgakias/randomforest-gradientboosting) for the top 15 features importance and SHAP analysis.
 
 ---
 
@@ -175,8 +221,9 @@ This project is licensed under the MIT License. See the [LICENSE](./LICENSE) fil
 
 For questions or feedback, please reach out via:
 - **GitHub:** [EvanGks](https://github.com/EvanGks)
-- **Kaggle:** [evangelosgakias](https://www.kaggle.com/evangelosgakias)
+- **X (Twitter):** [@Evan6471133782](https://x.com/Evan6471133782)
 - **LinkedIn:** [Evangelos Gakias](https://www.linkedin.com/in/evangelos-gakias-346a9072)
+- **Kaggle:** [evangelosgakias](https://www.kaggle.com/evangelosgakias)
 - **Email:** [vgakias_@hotmail.com](mailto:vgakias_@hotmail.com)
 
 ---
